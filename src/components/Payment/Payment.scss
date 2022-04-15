@@ -1,0 +1,140 @@
+.payment {
+    background-color: white;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    .payment__container {
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            font-weight: 400;
+            background-color: rgba(234, 237, 237);
+            border-bottom: 1px solid lightgrey;
+        }
+
+        .payment__section {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            margin: 0 20px;
+            border-bottom: 1px solid lightgrey;
+
+            .payment__title {
+                font-size: 20px;
+                width: 300px;
+            }
+
+            .payment__details {
+                max-width: 500px;
+
+                h4 {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                }
+
+                .payment__cardIcon {
+                    font-size: 18px;
+                    margin-left: 7px;
+                }
+
+                .payment__formCard {
+                    display: flex;
+                    gap: 30px;
+
+                    #expirationDate {
+                        font-size: 17px
+                    }
+
+                    label {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3px;
+                        width: fit-content;
+
+                        input {
+                            max-width: 50px;
+                            padding: 3px 5px;
+                            font-size: 15px;
+                            text-align: center;
+                            border-radius: 3px;
+                            border: 1px solid darkgray;
+
+                            &:focus {
+                                outline: solid;
+                                outline-width: 2px;
+                                outline-color: #f0c14b;
+                            }
+
+                            &::placeholder {
+                                text-align: center;
+                            }
+                        }
+
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+
+                        #cardNumber {
+                            max-width: 300px;
+                            text-align: left;
+
+                            &::placeholder {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .payment__submit {
+            padding: 30px 50px;
+            padding-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            width: fit-content;
+            margin: 0 auto;
+
+            .payment__submit-btn {
+                cursor: pointer;
+                background: #f0c14b;
+                border-radius: 2px;
+                width: 200px;
+                height: 30px;
+                border: 1px solid;
+                margin-top: 10px;
+                border-color: #a88734 #9c7e31 #846a29;
+                color: #111;
+            }
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .payment {
+        .payment__section {
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .payment {
+        .payment__section {
+            .payment__details {
+                .payment__formCard {
+                    flex-direction: column;
+                    gap: 10px !important;
+                }
+            }
+        }
+    }
+}
