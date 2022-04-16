@@ -5,7 +5,7 @@ import { useStateValue } from '../../state/StateProvider'
 import './Checkout.scss'
 
 function Checkout() {
-    const [{ basket, user }] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
 
     return (
         <div className="checkout">
@@ -19,7 +19,6 @@ function Checkout() {
                 <h2 className="checkout__title">
                     Your shopping Basket
                 </h2>
-
                 {
                     basket?.map(item => (
                         <CheckoutProduct
@@ -40,5 +39,4 @@ function Checkout() {
         </div>
     )
 }
-// 4:50:55
 export default Checkout

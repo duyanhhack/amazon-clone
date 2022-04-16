@@ -1,11 +1,12 @@
 .checkout {
     max-width: 1500px;
-    height: 100%;
+    min-height: 100vh;
     margin: 0 auto;
     display: flex;
     padding: 20px;
     background-color: white;
     height: max-content;
+    margin-top: 60px;
 
     .checkout__left {
         .checkout__ad {
@@ -27,7 +28,9 @@
 
 @media (max-width: 800px) {
     .checkout {
+        margin-top: 88px;
         flex-direction: column-reverse;
+        justify-content: flex-end;
         gap: 20px;
 
         .checkout__left {

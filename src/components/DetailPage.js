@@ -1,16 +1,16 @@
 import React from 'react'
 import Header from './Header/Header'
-import Checkout from './Checkout/Checkout'
+import ProductDetail from './ProductDetail/ProductDetail'
 import Footer from './Footer/Footer'
 
-function CheckoutPage() {
+function DetailPage() {
     return (
         <>
             <Header />
-            <Checkout />
+            <ProductDetail />
             <Footer />
         </>
     )
 }
 
-export default CheckoutPage
+export default DetailPage

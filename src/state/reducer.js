@@ -1,12 +1,13 @@
 export const initialState = {
     basket: [],
-    user: null
+    user: null,
+    detail: []
 };
 
 const reducer = (state, action) => {
 
-    // console.log('Action: ', action)
-    // console.log('Prev state: ', state)
+    console.log('Action: ', action)
+    console.log('Prev state: ', state)
 
     switch (action.type) {
         case 'ADD_TO_BASKET':
@@ -40,9 +41,21 @@ const reducer = (state, action) => {
                 ...state,
                 user: action.user
             }
+        case 'SHOW_DETAIL':
+            const newDetail = [...state.detail]
+            if (newDetail.length === 0) {
+                newDetail.push(action.item)
+            }
+            else {
+                newDetail.length = 0
+                newDetail.push(action.item)
+            }
+            return {
+                ...state,
+                detail: newDetail
+            };
         default:
             throw new Error('Invalid action')
-        // return state;
     }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.scss';
 import App from './App';
@@ -8,7 +8,8 @@ import { StateProvider } from './state/StateProvider';
 import { ShowProvider } from './SomeContext/SomeContext'
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <StateProvider initialState={initialState} reducer={reducer} >
     <BrowserRouter>
       <ShowProvider>
@@ -16,7 +17,6 @@ ReactDOM.render(
       </ShowProvider>
     </BrowserRouter>
   </StateProvider>,
-  document.getElementById('root')
 );
 
 reportWebVitals();

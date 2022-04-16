@@ -3,6 +3,8 @@
     justify-content: center;
     margin: 0 auto;
     max-width: 1500px;
+    min-height: 100vh;
+    margin-top: 60px;
 
     .home__container {
 
@@ -33,13 +35,13 @@
             .pagination--pageItem {
                 .pagination--pageLink {
                     font-size: 17px;
-                    font-weight: 600;
+                    font-weight: 700;
                     cursor: pointer;
                     color: #111;
                 }
 
                 &.active .pagination--pageLink {
-                    color: #ffc125;
+                    color: #ffb600;
                     font-weight: 700;
                 }
             }
@@ -49,9 +51,27 @@
 
 @media (max-width: 800px) {
     .home {
+        margin-top: 88px;
+
         .home__container {
             .home__listItem {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .home__pagination {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+                gap: 20px;
+                height: 30px;
+
+                .pagination--pageItem {
+                    .pagination--pageLink {
+                        font-size: 15px;
+                        font-weight: 700;
+                    }
+                }
             }
         }
     }

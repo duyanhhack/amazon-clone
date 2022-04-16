@@ -4,6 +4,7 @@ import CheckoutPage from './components/CheckoutPage'
 import LoginPage from './components/LoginPage'
 import SignupPage from './components/SignupPage'
 import PaymentPage from './components/PaymentPage'
+import DetailPage from './components/DetailPage'
 import { Routes, Route } from 'react-router-dom'
 import { auth } from './fire/firebase'
 import { useStateValue } from './state/StateProvider'
@@ -41,6 +42,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path='/detail' element={<DetailPage />} />
       </Routes>
     </div>
   );

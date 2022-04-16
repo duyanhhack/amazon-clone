@@ -1,22 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { AiFillStar } from 'react-icons/ai'
+import AddToCart from '../../AddToCartBTN/AddToCart'
 import { useStateValue } from '../../../state/StateProvider'
 import './Product.scss'
 
-function Product({ id, title, image, price, rating }) {
+function Product({ id, title, image, price, rating, description }) {
     const [state, dispatch] = useStateValue();
 
-    // console.log('this is the basket >>>', state.basket);
-
-    const handleAddtoBasket = () => {
+    const handleShowDetail = () => {
         dispatch({
-            type: 'ADD_TO_BASKET',
+            type: 'SHOW_DETAIL',
             item: {
                 id,
                 title,
                 image,
                 price,
-                rating
+                rating,
+                description
             }
         })
     }
@@ -33,15 +34,20 @@ function Product({ id, title, image, price, rating }) {
                     {
                         Array(Math.round(rating)).fill().map((_, i) => (
                             <AiFillStar key={i} />
-                            // if use forEach => no 'key'
                         ))
                     }
-                    {/* <small className="product__rating-detail">{rating}</small> */}
-
                 </div>
             </div>
-            <img src={image} alt="" />
-            <button onClick={handleAddtoBasket} className="product__buttonAdd">Add to Basket</button>
+            <Link to="/detail" onClick={handleShowDetail}>
+                <img src={image} alt="Product_Image" />
+            </Link>
+            <AddToCart
+                id={id}
+                title={title}
+                price={price}
+                image={image}
+                rating={rating}
+            />
         </div>
     )
 }

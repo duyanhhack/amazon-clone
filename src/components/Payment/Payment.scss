@@ -2,6 +2,7 @@
     background-color: white;
     max-width: 1500px;
     margin: 0 auto;
+    margin-top: 60px;
 
     .payment__container {
         h1 {
@@ -120,6 +121,8 @@
 
 @media (max-width: 860px) {
     .payment {
+        margin-top: 88px;
+
         .payment__section {
             flex-direction: column;
         }
